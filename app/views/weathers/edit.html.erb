@@ -1,0 +1,18 @@
+<%= form_for @weather, :url => weather_path(@weather), :method => :patch do |f| %>
+ <%= render :partial => "form", :locals => { :f => f}%>
+
+<div class="form-group">
+ <%= f.label :name, "風災地點" %>
+ <%= f.text_field :name, :class => "form-control" %>
+</div>
+
+<div class="form-group">
+ <%= f.label :description, "風災狀況" %>
+ <%= f.text_field :description, :class => "form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.submit "送出", :class => "btn btn-primary"  %>
+</div>
+
+<% end %>

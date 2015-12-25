@@ -1,0 +1,29 @@
+<h1>哭哭災情資訊網</h1>
+
+<ul>
+<% @weathers.each do |w| %>
+
+    <li>
+        <%= w.name %>
+
+        <%= link_to "災情現況", weather_path(w),:class => "btn btn-primary" %>
+        <%= link_to "更新災情狀況", edit_weather_path(w), :class => "btn btn-primary" %>
+        <%= link_to "災情已控制", weather_path(w), :method => :delete, :class => "btn btn-danger"%>
+       
+
+        
+
+    </li>
+
+<% end %>
+
+
+</ul>
+
+<%=paginate @weathers%>
+
+
+   
+ 
+
+<%= link_to "最新災情新增", new_weather_path, :class => "btn btn-primary"  %>
